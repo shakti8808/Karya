@@ -1,0 +1,4 @@
+/*! Tailwind CSS utility output used by the Karya pages */
+.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.selection\:bg-karya-lime *::selection,.selection\:bg-karya-lime::selection{background-color:#c8ff4d}
+.selection\:text-karya-night *::selection,.selection\:text-karya-night::selection{color:#0b0c10}

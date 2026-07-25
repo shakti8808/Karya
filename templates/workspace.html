@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% set page_title = 'Workspace — Karya' %}
+{% set page_description = 'Create and organise work with Karya.' %}
+{% set page_css = 'workspace.css' %}
+{% set page_js = 'workspace.js' %}
+{% block content %}
+<div class="workspace-shell">
+  <aside class="sidebar" id="sidebar" aria-label="Workspace navigation">
+    <div class="sidebar-head">
+      <a class="app-brand" href="{{ url_for('workspace') }}"><span>K</span>Karya</a>
+      <button class="sidebar-close" id="sidebarClose" aria-label="Close navigation">×</button>
+    </div>
+    <button class="new-button" id="newProjectButton"><span>＋</span> New project <kbd>N</kbd></button>
+    <nav class="app-nav">
+      <button class="nav-item active" data-view="home"><span>⌂</span>Home</button>
+      <button class="nav-item" data-view="projects"><span>□</span>Projects <b id="projectCount">0</b></button>
+    </nav>
+    <section class="recent-section">
+      <div class="recent-title"><span>Recent</span><button aria-label="More recent options">•••</button></div>
+      <div class="recent-list" id="recentList"><p class="recent-empty">Projects you create will appear here.</p></div>
+    </section>
+    <div class="sidebar-foot">
+      <div class="usage"><span><i></i>Frontend preview</span><small>Supabase connects later</small></div>
+    </div>
+  </aside>
+  <button class="sidebar-scrim" id="sidebarScrim" aria-label="Close navigation"></button>
+
+  <main class="app-main">
+    <header class="topbar">
+      <div class="topbar-left"><button class="menu-button" id="menuButton" aria-label="Open navigation">☰</button><span class="workspace-label">Personal workspace</span></div>
+      <div class="topbar-actions"><button class="feedback">Feedback</button><button class="profile-button" id="profileButton" aria-expanded="false"><span>SP</span><i></i></button></div>
+      <div class="profile-menu" id="profileMenu">
+        <div><strong>Shakti Pratap Singh</strong><span>Frontend preview account</span></div>
+        <a href="{{ url_for('home') }}">Karya website</a>
+        <button id="signOutButton">Sign out</button>
+      </div>
+    </header>
+
+    <section class="view active" id="homeView">
+      <div class="home-stage">
+        <div class="home-mark">K</div>
+        <p class="stage-kicker">KARYA WORKSPACE</p>
+        <h1>What do you want<br>Karya to do?</h1>
+        <p class="stage-copy">Describe an outcome. Karya will turn it into a coordinated project.</p>
+        <form class="composer" id="composerForm">
+          <textarea id="composerInput" rows="1" placeholder="Ask Karya to research, create, analyse or organise..." aria-label="Ask Karya"></textarea>
+          <div class="composer-bottom"><div class="composer-tools"><button type="button" aria-label="Attach a file">＋</button><span>Agent mode</span></div><button class="send-button" type="submit" aria-label="Create project">↑</button></div>
+        </form>
+        <div class="suggestions" aria-label="Prompt suggestions">
+          <button>Research a new market</button><button>Create a launch plan</button><button>Analyse my competitors</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="view" id="projectsView">
+      <div class="projects-page">
+        <div class="page-head"><div><p class="stage-kicker">YOUR WORK</p><h1>Projects</h1><p>Every outcome you start with Karya, in one place.</p></div><button class="new-button compact" id="projectsNewButton"><span>＋</span> New project</button></div>
+        <div class="project-grid" id="projectGrid"></div>
+        <div class="projects-empty" id="projectsEmpty"><div>K</div><h2>No projects yet</h2><p>Create your first project to see it here.</p><button id="emptyNewButton">Create a project</button></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div class="modal" id="projectModal" aria-hidden="true">
+  <div class="modal-backdrop" data-close-modal></div>
+  <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <header><div><p>NEW PROJECT</p><h2 id="modalTitle">What should Karya accomplish?</h2></div><button data-close-modal aria-label="Close">×</button></header>
+    <form id="projectForm">
+      <label for="projectGoal">Project goal</label>
+      <textarea id="projectGoal" rows="5" placeholder="Example: Research India’s EV market and create an executive brief." required></textarea>
+      <div class="modal-options"><span><i></i> Karya will plan the work before acting</span><small>Frontend preview</small></div>
+      <footer><button type="button" class="cancel-button" data-close-modal>Cancel</button><button type="submit" class="create-button">Create project <span>→</span></button></footer>
+    </form>
+  </section>
+</div>
+<div class="app-toast" id="appToast" role="status" aria-live="polite"></div>
+{% endblock %}

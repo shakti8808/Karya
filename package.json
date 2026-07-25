@@ -1,0 +1,13 @@
+{
+  "name": "karya-flask-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "start": "python app.py",
+    "dev": "flask --app app run --debug"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}

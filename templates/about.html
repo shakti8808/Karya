@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% set page_title = 'About — Karya' %}
+{% set page_description = 'Learn how Karya coordinates specialised AI agents to turn one instruction into finished digital work.' %}
+{% set page_css = 'about.css' %}
+{% set page_js = 'about.js' %}
+{% block content %}
+<div class="noise" aria-hidden="true"></div>
+  <header>
+    <nav class="wrap" aria-label="Primary navigation">
+      <a class="brand" href="{{ url_for('home') }}"><span class="logo">K</span>Karya</a>
+      <div class="links">
+        <a class="active" href="{{ url_for('about') }}" aria-current="page">About</a>
+        <a href="{{ url_for('pricing') }}">Pricing</a>
+        <a class="btn ghost" href="{{ url_for('home') }}" style="font-weight: 700; color: #c2c4ca;">← Back to Karya</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="tag">About Karya</div>
+        <h1>ONE INSTRUCTION.<br><span class="outline">FINISHED WORK.</span></h1>
+        <div class="hero-grid">
+          <p class="lead"><strong>Karya turns your ideas and instructions into finished work using coordinated AI agents.</strong></p>
+          <p>Instead of making people switch between search engines, documents, design tools and productivity apps, Karya coordinates specialised agents around the outcome you want.</p>
+        </div>
+        <div class="hero-rule" aria-hidden="true"><span>INTENT</span><i></i><span>COORDINATION</span><i></i><span>OUTCOME</span></div>
+      </div>
+    </section>
+
+    <section class="section problem">
+      <div class="wrap split reveal">
+        <div>
+          <span class="eyebrow">01 / THE PROBLEM</span>
+          <h2>The internet has become too fragmented.</h2>
+        </div>
+        <div class="copy">
+          <p>Completing one digital project often means searching for information, comparing sources, writing documents, creating visuals, organising files and moving between several applications.</p>
+          <p>Karya reduces that complexity. You explain the result. Karya assembles the right AI specialists and coordinates the work from start to finish.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section agents">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><span class="eyebrow">02 / HOW IT WORKS</span><h2>Specialised agents.<br>One coordinated outcome.</h2></div>
+          <p>Each agent owns a distinct part of the project. Karya keeps every contribution aligned so the final result feels complete—not like disconnected AI outputs.</p>
+        </div>
+        <div class="agent-grid reveal">
+          <article class="agent-card"><span class="agent-code">R</span><span class="number">01</span><h3>Research</h3><p>Finds relevant information and maps credible sources.</p><small>DISCOVER · VERIFY · MAP</small></article>
+          <article class="agent-card"><span class="agent-code">A</span><span class="number">02</span><h3>Analysis</h3><p>Identifies patterns, opportunities and useful insights.</p><small>COMPARE · REASON · DISTIL</small></article>
+          <article class="agent-card"><span class="agent-code">C</span><span class="number">03</span><h3>Creation</h3><p>Produces polished reports, documents and deliverables.</p><small>WRITE · DESIGN · BUILD</small></article>
+          <article class="agent-card"><span class="agent-code">O</span><span class="number">04</span><h3>Organisation</h3><p>Structures the project, files and next actions.</p><small>SORT · PACKAGE · DELIVER</small></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section principles">
+      <div class="wrap principle-grid">
+        <article class="feature voice reveal">
+          <span class="eyebrow">03 / NATURAL INTERFACE</span>
+          <h2>Built for the way India communicates.</h2>
+          <p>Karya is designed for natural voice and text interaction. Explain what you want in the language that feels most natural to you.</p>
+          <div class="languages"><span>English</span><span>हिन्दी</span><span>বাংলা</span><span>தமிழ்</span><span>తెలుగు</span><span>मराठी</span></div>
+        </article>
+        <article class="feature control reveal">
+          <span class="eyebrow">04 / HUMAN CONTROL</span>
+          <h2>AI that acts. You stay in control.</h2>
+          <p>Important actions remain visible, reviewable and subject to your approval.</p>
+          <ul><li><i>✓</i>Transparent action plans</li><li><i>✓</i>Visible progress</li><li><i>✓</i>Reviewable outputs</li><li><i>✓</i>Approval before important actions</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="vision">
+      <div class="wrap vision-inner reveal">
+        <span class="eyebrow">05 / LONG-TERM VISION</span>
+        <blockquote>The trusted interface<br><em>for the internet.</em></blockquote>
+        <p>Our long-term vision is a world where people do not need to learn every tool or open multiple applications. They simply explain what they want to accomplish.</p>
+        <strong>Stop learning every tool. Just explain the outcome.</strong>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap reveal">
+        <span class="eyebrow">From tools to outcomes.</span>
+        <h2>A simpler way to work online.</h2>
+        <p>Karya coordinates the searching, thinking, creating and organising—so you can stay focused on the outcome.</p>
+        <div class="actions"><a class="btn lime" href="{{ url_for('login') }}">Open Karya →</a><a class="btn ghost" href="{{ url_for('pricing') }}">View pricing</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot"><a class="brand" href="{{ url_for('home') }}"><span class="logo">K</span>Karya</a><span>Built for the way India thinks, speaks and works.</span><span>© 2026 Karya</span></div>
+  </footer>
+  
+{% endblock %}

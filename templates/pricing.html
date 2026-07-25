@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% set page_title = 'Pricing — Karya' %}
+{% set page_description = 'Simple, country-aware pricing for Karya, the AI action platform.' %}
+{% set page_css = 'pricing.css' %}
+{% set page_js = 'pricing.js' %}
+{% block content %}
+<div class="noise" aria-hidden="true"></div>
+  <header>
+    <nav class="wrap" aria-label="Primary navigation">
+      <a class="brand" href="{{ url_for('home') }}"><span class="logo">K</span>Karya</a>
+      <div class="links">
+        <a href="{{ url_for('about') }}">About</a>
+        <a class="active" href="{{ url_for('pricing') }}" aria-current="page">Pricing</a>
+        <a class="btn ghost" href="{{ url_for('home') }}" style="font-weight: 700; color: #c2c4ca;">← Back to Karya</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="tag">Pricing that meets you where you are</div>
+        <h1>SIMPLE PRICING.<br><span class="outline">SERIOUS EXECUTION.</span></h1>
+        <div class="hero-bottom">
+          <p>Start free. Upgrade when you need more agents, deeper research and complete project execution.</p>
+          <label class="country-picker" for="country">
+            <span>Your country</span>
+            <select id="country" aria-label="Select your country">
+              <option value="IN">India</option>
+              <option value="US">United States</option>
+              <option value="GB">United Kingdom</option>
+              <option value="EU">European Union</option>
+              <option value="CA">Canada</option>
+              <option value="AU">Australia</option>
+              <option value="SG">Singapore</option>
+              <option value="AE">United Arab Emirates</option>
+              <option value="JP">Japan</option>
+            </select>
+          </label>
+        </div>
+        <div class="location-note" id="locationNote" role="status" aria-live="polite"><i></i><span>Detecting your local currency…</span></div>
+      </div>
+    </section>
+
+    <section class="pricing-section">
+      <div class="wrap price-grid">
+        <article class="price-card">
+          <div class="plan-top"><span class="plan-code">01 / STARTER</span></div>
+          <h2>Start</h2>
+          <p class="plan-copy">Explore Karya and turn smaller instructions into finished work.</p>
+          <div class="price"><strong data-price="starter">—</strong><span>/ month</span></div>
+          <a class="plan-button ghost" href="{{ url_for('early_access') }}">Join early access</a>
+          <ul><li>Research and analysis agents</li><li>Standard project outputs</li><li>English and Hindi input</li></ul>
+        </article>
+
+        <article class="price-card featured">
+          <div class="popular">MOST POPULAR</div>
+          <div class="plan-top"><span class="plan-code">02 / INDIVIDUAL</span></div>
+          <h2>Pro</h2>
+          <p class="plan-copy">For people who want Karya to execute meaningful work every day.</p>
+          <div class="price"><strong data-price="pro">—</strong><span>/ month</span></div>
+          <a class="plan-button lime" href="{{ url_for('early_access') }}">Get Pro access →</a>
+          <ul><li>All specialised agents</li><li>Deeper research and polished outputs</li><li>Voice and Indian-language workflows</li><li>Priority execution</li></ul>
+        </article>
+
+        <article class="price-card">
+          <div class="plan-top"><span class="plan-code">03 / COLLABORATION</span></div>
+          <h2>Team</h2>
+          <p class="plan-copy">For teams coordinating projects, knowledge and repeatable workflows.</p>
+          <div class="price"><strong data-price="team">—</strong><span>/ user / month</span></div>
+          <a class="plan-button ghost" href="{{ url_for('early_access') }}">Request team access</a>
+          <ul><li>Everything in Pro</li><li>Shared team workspace</li><li>Reusable agent workflows</li><li>Admin controls and approvals</li><li>Priority support</li></ul>
+        </article>
+      </div>
+      <p class="tax-note wrap">Prices are shown in your selected currency. Taxes may apply based on your billing location.</p>
+    </section>
+
+    <section class="promise">
+      <div class="wrap promise-grid">
+        <div><span class="eyebrow">One instruction. Full execution.</span><h2>Pay for outcomes,<br>not a pile of tools.</h2></div>
+        <div class="promise-list"><p><span>01</span>No setup fees</p><p><span>02</span>Cancel anytime</p><p><span>03</span>Your work stays yours</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap foot"><a class="brand" href="{{ url_for('home') }}"><span class="logo">K</span>Karya</a><span>Built for the way India thinks, speaks and works.</span><span>© 2026 Karya</span></div></footer>
+  
+{% endblock %}

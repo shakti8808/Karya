@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% set page_title = 'Sign in — Karya' %}
+{% set page_description = 'Continue to the Karya web application.' %}
+{% set page_css = 'auth.css' %}
+{% set page_js = 'auth.js' %}
+{% block content %}
+<div class="auth-shell">
+  <header class="auth-header">
+    <a class="auth-brand" href="{{ url_for('home') }}"><span class="auth-logo">K</span><span>Karya</span></a>
+    <a class="back-link" href="{{ url_for('home') }}">← Back to website</a>
+  </header>
+  <main class="auth-main">
+    <section class="auth-story" aria-labelledby="authTitle">
+      <div class="auth-kicker"><span></span> YOUR AI ACTION WORKSPACE</div>
+      <h1 id="authTitle">Ideas in.<br><em>Finished work out.</em></h1>
+      <p>Bring a goal to Karya. A coordinated team of agents will research, analyse, create and organise the work around it.</p>
+      <div class="auth-flow" aria-label="Karya workflow">
+        <span>Intent</span><i></i><span>Agents</span><i></i><span>Outcome</span>
+      </div>
+    </section>
+    <section class="signin-card" aria-labelledby="signinTitle">
+      <div class="signin-badge">K</div>
+      <p class="eyebrow">WELCOME TO KARYA</p>
+      <h2 id="signinTitle">Continue to your workspace</h2>
+      <p class="signin-copy">Sign in to create projects and return to your work from any device.</p>
+      <button class="google-button" id="googleButton" type="button">
+        <span class="google-mark" aria-hidden="true">G</span>
+        Continue with Google
+      </button>
+      <div class="secure-note"><span>●</span> Supabase authentication will connect here</div>
+      <p class="legal">By continuing, you agree to Karya’s Terms and Privacy Policy.</p>
+    </section>
+  </main>
+  <footer class="auth-footer"><span>© 2026 Karya</span><span>Private by design</span></footer>
+</div>
+{% endblock %}
